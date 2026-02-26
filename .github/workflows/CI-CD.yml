@@ -14,6 +14,6 @@ jobs:
 
       - name: Deploy docker
         run: |
-            docker run -d -p 8080:80 ara-latest
+            docker run -d -p 8080:80 --name ara-latest
             sleep 5
             curl http://localhost:8080
