@@ -1,0 +1,19 @@
+name: CI CD Pipeline
+
+on: push
+
+jobs:
+  build-and-test:
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create Docker Image
+        run: docker run -m ara-deploy
+
+      - name: Deploy docker
+        run: |
+            docker run -d -p 8080:80 ara-deploy
+            sleep 5
+            curl http://localhost:8080
