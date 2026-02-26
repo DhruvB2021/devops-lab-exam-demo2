@@ -1,3 +1,3 @@
 CREATE nginx:alpine
 COPY indext.html usr/share/nginx/html/index.html
-expose 80
+EXPOSE 80
