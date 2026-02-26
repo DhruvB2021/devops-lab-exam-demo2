@@ -8,10 +8,7 @@ jobs:
      steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Docker setup
-        uses: actions/docker-setup@v3
-
+        
       - name: Create Docker Image
         run: docker build -t ara-latest
 
